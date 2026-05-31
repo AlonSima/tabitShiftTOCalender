@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "TabitShift → Google Calendar",
+  "version": "1.0",
+  "description": "מסנכרן משמרות מ-TabitShift לגוגל קלנדר",
+  "permissions": [
+    "cookies",
+    "storage",
+    "alarms",
+    "notifications"
+  ],
+  "host_permissions": [
+    "https://app.shiftorganizer.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "TabitShift Sync"
+  }
+}

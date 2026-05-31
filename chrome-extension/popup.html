@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      width: 300px;
+      padding: 16px;
+      background: #f8f9fa;
+      color: #333;
+    }
+    h2 {
+      font-size: 16px;
+      color: #1a73e8;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .status-box {
+      background: white;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 12px;
+      font-size: 13px;
+    }
+    .status-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 6px;
+    }
+    .status-label { color: #666; }
+    .status-value { font-weight: bold; }
+    .ok { color: #34a853; }
+    .error { color: #ea4335; }
+    .warning { color: #fbbc04; }
+    button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      cursor: pointer;
+      margin-bottom: 8px;
+      font-family: inherit;
+    }
+    #btn-capture {
+      background: #1a73e8;
+      color: white;
+    }
+    #btn-capture:hover { background: #1557b0; }
+    #btn-test {
+      background: #34a853;
+      color: white;
+    }
+    #btn-test:hover { background: #2d9248; }
+    #btn-copy {
+      background: #f1f3f4;
+      color: #333;
+      border: 1px solid #dadce0;
+    }
+    #btn-copy:hover { background: #e8eaed; }
+    .log {
+      background: #1e1e1e;
+      color: #d4d4d4;
+      border-radius: 6px;
+      padding: 10px;
+      font-size: 11px;
+      font-family: monospace;
+      max-height: 120px;
+      overflow-y: auto;
+      margin-top: 8px;
+      direction: ltr;
+    }
+    .log .success { color: #6fcf97; }
+    .log .error { color: #eb5757; }
+    .log .info { color: #56ccf2; }
+    .divider {
+      border: none;
+      border-top: 1px solid #e0e0e0;
+      margin: 12px 0;
+    }
+    small { color: #666; font-size: 11px; }
+  </style>
+</head>
+<body>
+  <h2>🔄 TabitShift Sync</h2>
+
+  <div class="status-box">
+    <div class="status-row">
+      <span class="status-label">סשן:</span>
+      <span class="status-value" id="status-session">בודק...</span>
+    </div>
+    <div class="status-row">
+      <span class="status-label">עודכן:</span>
+      <span class="status-value" id="status-time">-</span>
+    </div>
+  </div>
+
+  <button id="btn-capture">📥 תפוס קוקיז מהאתר</button>
+  <button id="btn-test">🧪 בדוק חיבור ל-API</button>
+  <button id="btn-copy">📋 העתק קוקיז לסקריפט</button>
+
+  <hr class="divider">
+  <small>הסקריפט ירוץ אוטומטית כל שבת 17:00</small>
+
+  <div class="log" id="log">
+    <span class="info">> מוכן לעבודה</span>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
